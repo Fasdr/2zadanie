@@ -14,6 +14,6 @@ ru = np.zeros((nt, nx))
 
 for i in range(0, nx):
     for j in range(0, nt):
-        ru[j][i] = -(i*h)**4+(i*h)**2+i*j*t*h+(j*t)**2-(t*j)*exp(i*h)
+        ru[j][i] = -sin(pi*i*h)-cos(2*pi*j*t)/2+2*pi*i*h-3.5*j*t
 
 
