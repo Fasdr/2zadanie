@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from math import exp, sin, cos, pi
+from math import sin, cos, pi
 
-h = 0.1
-t = 0.1
+h = 0.001
+t = 0.001
 
 nx = int(1/h)+1
 nt = int(1/t)+1
@@ -28,6 +28,7 @@ for i in range(0, nx):
 for j in range(0, nt-1):
     for i in range(1, nx-1):
         u[j+1][i] = (u[j][i+1]+u[j][i-1])/2-t*c[j][i]*(u[j][i+1]-u[j][i-1])/(2*h)
+    u[j + 1][nx-1] = u[j][nx-1]*(1-t*c[j][nx-1]/h)+t*c[j][nx-1]/h*u[j][nx-2]
 
 b = u-ru
 c = -b
