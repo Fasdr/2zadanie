@@ -29,6 +29,37 @@ for j in range(0, nt-1):
     for i in range(1, nx-1):
         u[j+1][i] = (u[j][i+1]+u[j][i-1])/2-t*c[j][i]*(u[j][i+1]-u[j][i-1])/(2*h)
 
+b = u-ru
+c = -b
 
+print(b.max())
+print(c.max())
 
-
+# tt = np.arange(0, 1+t, t)
+#
+# xx = np.arange(0, 1+h, h)
+#
+# for i in range(0, 11):
+#     plt.figure(figsize=(20, 10))
+#     plt.subplot(1, 1,  1)
+#     plt.plot(xx, u[i * int(0.1 / t)], 'bo')
+#     plt.title('t = ' + str(i/10))
+#     plt.xlabel('x')
+#     plt.ylabel('Value')
+#     plt.grid(True)
+#     plt.subplot(1, 1,  1)
+#     plt.plot(xx, ru[i * int(0.1 / t)], 'r+')
+#     plt.grid(True)
+#     plt.show()
+#
+# plt.figure(figsize=(20, 10))
+# plt.subplot(1, 1,  1)
+# plt.plot(tt, u[:, int(0.5 / h)], 'bo')
+# plt.title('x = 0.5')
+# plt.xlabel('t')
+# plt.ylabel('Value')
+# plt.grid(True)
+# plt.subplot(1, 1,  1)
+# plt.plot(tt, ru[:, int(0.5 / h)], 'r+')
+# plt.grid(True)
+# plt.show()
